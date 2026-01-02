@@ -40,10 +40,8 @@ mod components;
 
 #[component]
 fn SomeInput<T: 'static + Clone>(
-    #[props(extends=GlobalAttributes)] attributes: Vec<Attribute>,
     store: Store<Option<T>>,
     error_condition: Callback<String, Option<T>>,
-    children: Element,
 ) -> Element {
     let class = match *store.read() {
         Some(_) => "input",
