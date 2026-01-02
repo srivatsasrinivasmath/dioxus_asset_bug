@@ -24,6 +24,9 @@
 .input.errored{ 
   box-shadow: inset 0 0 0 2px var(--light, var(--primary-error-color))
 }
+.input.correct{ 
+  box-shadow: inset 0 0 0 2px green
+}
 
 .input::placeholder {
   color: var(--secondary-color-5);

@@ -44,14 +44,15 @@ fn SomeInput<T: 'static + Clone>(
     error_condition: Callback<String, Option<T>>,
 ) -> Element {
     let class = match *store.read() {
-        Some(_) => "input",
+        Some(_) => "input correct",
         None => "input errored",
     };
     rsx! {
         Input{
             class,
             oninput: move |evt: FormEvent|{
-                store.set(error_condition.call(evt.value()))
+                store.set(error_condition.call(evt.value()));
+                info!("{class}")
             }
         }
     }
